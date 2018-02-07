@@ -24,7 +24,7 @@ adjacent values are unlikely to return adjacent strings (See Stats section below
 
 ## How to install
 
-    sudo gem install fixed_length_encoder
+    npm install fixed_length_encoder
 
 ## How to use
 

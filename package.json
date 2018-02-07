@@ -1,6 +1,6 @@
 {
   "name": "fixed_length_encoder",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Map integers to fixed length strings in a non-sequential way",
   "main": "index.js",
   "directories": {
