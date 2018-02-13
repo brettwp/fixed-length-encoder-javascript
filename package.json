@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "keywords": [
     "fixed",
@@ -15,6 +15,9 @@
     "encode",
     "integers"
   ],
-  "author": "Brett Pontarelli",
-  "license": "MIT"
+  "author": "Brett Pontarelli <brett@paperyfrog.com> (http://brett.pontarelli.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^3.0.0"
+  }
 }
