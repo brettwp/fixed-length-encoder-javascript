@@ -66,44 +66,50 @@ describe('FixedLengthEncoder', () => {
       expect(fle.decode(message)).toEqual(value);
     });
 
-//     it('should be reversible for the max value', () => {
-//       value = (62**8)-1
-//       message = fle.encode(value)
-//       fle.decode(message).toEqual(value)
-//     });
+    it('should be reversible for the max value', () => {
+      value = Math.pow(62, 8) - 1;
+      message = fle.encode(value);
+      expect(fle.decode(message)).toEqual(value);
+    });
 
-//     it('should be reversible for the middle value', () => {
-//       value = ((62**8)/2).floor
-//       message = fle.encode(value)
-//       fle.decode(message).toEqual(value)
-//     });
-//   });
+    it('should be reversible for the middle value', () => {
+      value = Math.pow(62, 8) - 1;
+      value = Math.floor(value / 2);
+      message = fle.encode(value);
+      expect(fle.decode(message)).toEqual(value);
+    });
+  });
 
-//   describe 'Default encodings' do
-//     it('should be a valid alphabet', () => {
-//       fle.isValidAlphabet().should be_true
-//     });
+  describe('Default encodings', () => {
+    beforeEach(() => {
+      fle = new FixedLengthEncoder();
+    });
 
-//     it('should be a valid map', () => {
-//       fle.isValidMap().should be_true
-//     });
+    it('should be a valid alphabet', () => {
+      expect(fle.isValidAlphabet()).toBe(true);
+    });
 
-//     it('should be reversible for the min value', () => {
-//       value = 0
-//       message = fle.encode(value)
-//       fle.decode(message).toEqual(value)
-//     });
+    it('should be a valid map', () => {
+      expect(fle.isValidMap()).toBe(true);
+    });
 
-//     it('should be reversible for the max value', () => {
-//       value = (36**8)-1
-//       message = fle.encode(value)
-//       fle.decode(message).toEqual(value)
-//     });
+    it('should be reversible for the min value', () => {
+      var value = 0;
+      var message = fle.encode(value);
+      expect(fle.decode(message)).toEqual(value);
+    });
 
-//     it('should be reversible for the middle value', () => {
-//       value = ((36**8)/2).floor
-//       message = fle.encode(value)
-//       fle.decode(message).should eq(value)
-//     });
+    it('should be reversible for the max value', () => {
+      value = Math.pow(36, 8) - 1;
+      message = fle.encode(value);
+      expect(fle.decode(message)).toEqual(value);
+    });
+
+    it('should be reversible for the middle value', () => {
+      value = Math.pow(36, 8) - 1;
+      value = Math.floor(value / 2);
+      message = fle.encode(value);
+      expect(fle.decode(message)).toEqual(value);
+    });
   });
 });
